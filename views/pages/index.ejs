@@ -24,46 +24,74 @@
 
 </html> -->
 
-<!DOCTYPE html>
+
+
+
+
+
+
+
+
+  
+  <!DOCTYPE html>
 <html>
+
 <head>
   <% include ../includes/header.ejs %>
 </head>
-<!-- This is the solution for the templating side of TA02-->
+
 <body>
   <% include ../includes/nav.ejs %>
-<div class="jumbotron text-center">
-  <div class="container">
-    <h1><%= title %></h1>
-  </div>
-</div>
-<div class="container">
-    <div>
-        <!-- Form for requirement 01 -->
-        <form action="/ta02/addUser" method="POST">
-            <label for="newUser">New Username</label><br>
-            <input type="text" name="newUser">
-            <button type="submit">Add User</button>
-        </form>
-        <!-- Form for requirement 01 -->
+    <div class="jumbotron text-center">
+      <div class="container">
+        <h1>
+          <%= title %>
+        </h1>
+        <p>This is a sample Node application deployed to Heroku. It's a reasonably simple app - but a good foundation for understanding how to get the most out of the Heroku platform.</p>
+        <a type="button" class="btn btn-lg btn-default" href="https://devcenter.heroku.com/articles/getting-started-with-nodejs"><span class="glyphicon glyphicon-flash"></span> Getting Started on Heroku with Node.js</a>
+        <a type="button" class="btn btn-lg btn-primary" href="https://github.com/heroku/node-js-getting-started"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>
+      </div>
     </div>
-    <div>
-        <!-- Form for requirement 03 -->
-        <form action="/ta02/removeUser" method="POST">
-            <label for="remUser">Username to remove</label><br>
-            <input type="text" name="remUser">
-            <button type="submit">Remove User</button>
-        </form>
-        <!-- Form for requirement 03 -->
+
+
+    <div class="container">
+        <div>
+            <!-- Form for requirement 01 -->
+            <form action="/ta02/addUser" method="POST">
+                <label for="newUser">New Username</label><br>
+                <input type="text" name="newUser">
+                <button type="submit">Add User</button>
+            </form>
+            <!-- Form for requirement 01 -->
+        </div>
+        <div>
+            <!-- Form for requirement 03 -->
+            <form action="/ta02/removeUser" method="POST">
+                <label for="remUser">Username to remove</label><br>
+                <input type="text" name="remUser">
+                <button type="submit">Remove User</button>
+            </form>
+            <!-- Form for requirement 03 -->
+        </div>
+        <div>
+            <!-- Looped List for requirement 01-->
+
+
+            <!--Commented out b/c list doesn't exist yet
+              
+              <h2>Users:</h2>
+            <% for(user of users) { %>
+              <p><%= user %></p>
+            <% } %> -->
+
+
+            <!-- Looped List for requirement 01-->
+        </div>
     </div>
-    <div>
-        <!-- Looped List for requirement 01-->
-        <h2>Users:</h2>
-        <% for(user of users) { %>
-          <p><%= user %></p>
-        <% } %>
-        <!-- Looped List for requirement 01-->
-    </div>
-</div>
+
+
+
 </body>
+
 </html>
+
