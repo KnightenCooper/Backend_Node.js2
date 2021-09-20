@@ -17,7 +17,7 @@ router.get('/', (req, res, next) => {
   res.write('</html>');
   return res.end();
 });
-router.get('/create-user', (req, res, next) => {
+router.post('/create-user', (req, res, next) => {
 
   fs.readFile('users.txt', 'utf8', function(err, data) {
       if (err) throw err;
