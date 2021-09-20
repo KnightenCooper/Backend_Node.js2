@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../includes/header.ejs %>
+</head>
+<!-- This is the solution for the templating side of books-->
+<body>
+  <% include ../includes/nav.ejs %>
+<div class="jumbotron text-center">
+  <div class="container">
+    <h1><%= title %></h1>
+  </div>
+</div>
+<div class="container">
+    <div>
+        <!-- Form for requirement 01 -->
+        <form action="/books/addBook" method="POST">
+            <label for="newBook">New Book</label><br>
+            <input type="text" name="newBook">
+            <button type="submit">Add Book</button>
+        </form>
+        <!-- Form for requirement 01 -->
+    </div>
+    <div>
+        <!-- Form for requirement 03 -->
+        <form action="/books/removeBook" method="POST">
+            <label for="remBook">Book to remove</label><br>
+            <input type="text" name="remBook">
+            <button type="submit">Remove Book</button>
+        </form>
+        <!-- Form for requirement 03 -->
+    </div>
+    <div>
+        <!-- Looped List for requirement 01-->
+        <h2>Books:</h2>
+        <% for(Book of Books) { %>
+          <p><%= Book %></p>
+        <% } %>
+        <!-- Looped List for requirement 01-->
+    </div>
+</div>
+</body>
+</html>
