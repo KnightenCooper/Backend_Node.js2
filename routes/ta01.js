@@ -7,58 +7,58 @@ const router = express.Router();
 
 const activities = ['soccer', 'basketball', 'football', 'swimming'];
 router.get('/', (req, res, next) => {
-  // code for username assignment
-  res.setHeader('Content-Type', 'text/html');
-  res.write('<html>');
-  res.write('<head><title>Assignment 1</title></head>');
-  res.write(
-    '<body><form action="/create-user" method="POST"><input type="text" name="username"><button type="submit">Send</button></form></body>'
-  );
-  res.write('</html>');
-  return res.end();
-});
-router.post('/create-user', (req, res, next) => {
-
-  fs.readFile('users.txt', 'utf8', function(err, data) {
-      if (err) throw err;
-
-      res.setHeader('Content-Type', 'text/html');
-      res.write('<html>');
-      res.write('<head><title>Assignment 1</title></head>');
-      res.write('<body><ul>');
-
-      res.write(data); // uses the text from 'users.txt' to get the user data
-
-      res.write('</ul></body>');
-      res.write('</html>');
-      return res.end();
-      });
-
-
-
-
-//   // Request handling
-//   // CORE CHALLENGE 1 -
-//   // HTML page is written
+//   // code for username assignment
+//   res.setHeader('Content-Type', 'text/html');
 //   res.write('<html>');
-//   res.write('<head><title>Hello Browser!</Title></head>');
-//   res.write('<body>');
-//   res.write('<h1>Welcome to my world!</h1>');
-//   // navigation to your activities endpoint.
-//   res.write('<a href="/">Home</a></br>');
-//   res.write('<a href="ta01/activities">Activities List</a></br>');
-//   // These are navigation links for the stretch challenges
-//   res.write('<a href="ta01/stretch-1">Stretch 1 (CSS)</a></br>');
+//   res.write('<head><title>Assignment 1</title></head>');
 //   res.write(
-//     '<a href="ta01/stretch-2">Stretch 2 (Write Form input to text input)</a></br>'
+//     '<body><form action="/create-user" method="POST"><input type="text" name="username"><button type="submit">Send</button></form></body>'
 //   );
-//   res.write(
-//     '<a href="ta01/stretch-3">Stretch 3 (Add two number inputs together)</a></br>'
-//   );
-//   res.write('</body>');
 //   res.write('</html>');
-//   return res.end(); // Return so you don't execute remaining code outside of if statement
+//   return res.end();
 // });
+// router.post('/create-user', (req, res, next) => {
+
+//   fs.readFile('users.txt', 'utf8', function(err, data) {
+//       if (err) throw err;
+
+//       res.setHeader('Content-Type', 'text/html');
+//       res.write('<html>');
+//       res.write('<head><title>Assignment 1</title></head>');
+//       res.write('<body><ul>');
+
+//       res.write(data); // uses the text from 'users.txt' to get the user data
+
+//       res.write('</ul></body>');
+//       res.write('</html>');
+//       return res.end();
+//       });
+
+
+
+
+  // Request handling
+  // CORE CHALLENGE 1 -
+  // HTML page is written
+  res.write('<html>');
+  res.write('<head><title>Hello Browser!</Title></head>');
+  res.write('<body>');
+  res.write('<h1>Welcome to my world!</h1>');
+  // navigation to your activities endpoint.
+  res.write('<a href="/">Home</a></br>');
+  res.write('<a href="ta01/activities">Activities List</a></br>');
+  // These are navigation links for the stretch challenges
+  res.write('<a href="ta01/stretch-1">Stretch 1 (CSS)</a></br>');
+  res.write(
+    '<a href="ta01/stretch-2">Stretch 2 (Write Form input to text input)</a></br>'
+  );
+  res.write(
+    '<a href="ta01/stretch-3">Stretch 3 (Add two number inputs together)</a></br>'
+  );
+  res.write('</body>');
+  res.write('</html>');
+  return res.end(); // Return so you don't execute remaining code outside of if statement
+});
 
 // CORE CHALLENGE 2 -
 router.get('/activities', (req, res, next) => {
