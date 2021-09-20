@@ -23,14 +23,14 @@ router.post('/removeBook', (req, res, next) => {
         bookArray.splice(index, 1);
     }
 
-    res.redirect('/books/');
+    res.redirect('/addproduct/');
 });
 
 router.get('/',(req, res, next) => {
-    res.render('pages/books', {
+    res.render('pages/addproduct', {
         title: 'Prove Activity 02',
         Books: bookArray,
-        path: '/books', // For pug, EJS
+        path: '/addproduct', // For pug, EJS
         activeTA03: true, // For HBS
         contentCSS: true, // For HBS
     });
