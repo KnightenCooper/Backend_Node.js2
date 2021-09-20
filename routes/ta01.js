@@ -17,6 +17,22 @@ router.get('/', (req, res, next) => {
   res.write('</html>');
   return res.end();
 });
+router.get('/create-user', (req, res, next) => {
+
+  fs.readFile('users.txt', 'utf8', function(err, data) {
+      if (err) throw err;
+
+      res.setHeader('Content-Type', 'text/html');
+      res.write('<html>');
+      res.write('<head><title>Assignment 1</title></head>');
+      res.write('<body><ul>');
+
+      res.write(data); // uses the text from 'users.txt' to get the user data
+
+      res.write('</ul></body>');
+      res.write('</html>');
+      return res.end();
+      });
 
 
 
