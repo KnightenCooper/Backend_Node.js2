@@ -77,6 +77,10 @@ router.get('/activities', (req, res, next) => {
   res.write('<input type="text" name="newActivity">');
   res.write('<button type="submit">Submit</button>');
   res.write('</form>');
+
+  // My added code to make a button
+  res.write('<form action="/create-user" method="POST"><input type="text" name="username"><button type="submit">Send</button></form>');
+
   // End tags
   res.write('</body>');
   res.write('</html>');
