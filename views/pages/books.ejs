@@ -3,7 +3,7 @@
 <head>
   <% include ../includes/header.ejs %>
 </head>
-<!-- This is the solution for the templating side of TA02-->
+<!-- This is the solution for the templating side of books-->
 <body>
   <% include ../includes/nav.ejs %>
 <div class="jumbotron text-center">
@@ -14,7 +14,7 @@
 <div class="container">
     <div>
         <!-- Form for requirement 01 -->
-        <form action="/ta02/addUser" method="POST">
+        <form action="/books/addUser" method="POST">
             <label for="newUser">New Username</label><br>
             <input type="text" name="newUser">
             <button type="submit">Add User</button>
@@ -23,7 +23,7 @@
     </div>
     <div>
         <!-- Form for requirement 03 -->
-        <form action="/ta02/removeUser" method="POST">
+        <form action="/books/removeUser" method="POST">
             <label for="remUser">Username to remove</label><br>
             <input type="text" name="remUser">
             <button type="submit">Remove User</button>
