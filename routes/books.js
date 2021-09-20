@@ -2,13 +2,13 @@ const express = require('express');
 const router = express.Router();
 
 // For requirement 01 of books
-const userArray = ['Jack', 'Jill', 'Brian'];
+const bookArray = [];
 
 // For requirement 02 of books
 router.post('/addUser', (req, res, next) => {
     const newUser = req.body.newUser;
 
-    userArray.push(newUser);
+    bookArray.push(newUser);
 
     res.redirect('/books/');
 });
@@ -18,9 +18,9 @@ router.post('/removeUser', (req, res, next) => {
     const remUser = req.body.remUser;
 
     // Splice method removes from a const array
-    const index = userArray.indexOf(remUser);
+    const index = bookArray.indexOf(remUser);
     if (index !== -1 ) {
-        userArray.splice(index, 1);
+        bookArray.splice(index, 1);
     }
 
     res.redirect('/books/');
@@ -29,7 +29,7 @@ router.post('/removeUser', (req, res, next) => {
 router.get('/',(req, res, next) => {
     res.render('pages/books', {
         title: 'Team Activity 02',
-        users: userArray,
+        users: bookArray,
         path: '/books', // For pug, EJS
         activeTA03: true, // For HBS
         contentCSS: true, // For HBS
