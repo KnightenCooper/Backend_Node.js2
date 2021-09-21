@@ -1,12 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-// For requirement 01 of books
+// DOES NOT HANDLE THE SYNTAX FOR BOOKS AND PRICES _____________________ books.js does
 const bookArray = [];
+// const bookArrayPrice = [];
 
 // For requirement 02 of books
 router.post('/addBook', (req, res, next) => {
-    const newBook = req.body.newBook;
+    const newBookPrice = req.body.newBook;
+    // const newBookPrice = req.body.newBook;
 
     bookArray.push(newBook);
 
